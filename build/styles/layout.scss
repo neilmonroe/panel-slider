@@ -1,0 +1,57 @@
+// general layout styles for the site
+@import "config";
+
+.page {
+    margin: 0 auto;
+    max-width: $page-max-width;
+}
+
+.panel-slider {
+    .actions {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        padding: 1em 0;
+        text-align: center;
+    }
+
+    .slide {
+        overflow: visible !important;
+    }
+
+    .slide-1 {
+        .actions {
+            background-color: red;
+        }
+    }
+
+    .slide-2 {
+        .actions {
+            background-color: green;
+        }
+    }
+
+    .slide-3 {
+        .actions {
+            background-color: blue;
+        }
+    }
+
+    .slide-4 {
+        .actions {
+            background-color: red;
+        }
+    }
+
+    .slide-5 {
+        .actions {
+            background-color: green;
+        }
+    }
+
+    .slide-6 {
+        .actions {
+            background-color: blue;
+        }
+    }
+}

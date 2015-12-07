@@ -1,0 +1,21 @@
+body {
+    background: #fff;
+    color: #333;
+}
+
+.aspect-box {
+    position: relative;
+    height: 0;
+}
+
+.aspect-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ratio_16-9 {
+    padding-bottom: 56.250%;
+}

@@ -1,0 +1,35 @@
+$slide-info: ("") !default;
+$slide-count: length($slide-info);
+$slide-width: if($slide-count > 0, 1 / $slide-count, 0);
+$slide-bg-position: if($slide-count > 1, 1 / ($slide-count - 1), 0);
+
+@function percentValue($num) {
+	@return #{100 * $num}%;
+}
+
+@mixin slide-props($index, $imgurl) {
+    left: percentValue($slide-width * $index);
+    right: percentValue($slide-width * $index + $slide-width);
+    background-image: url("#{$imgurl}");
+    background-position: percentValue($slide-bg-position * $index) center;
+}
+
+.panel-slider {
+    position: relative;
+    height: 100%;
+
+    .slide {
+        position: absolute;
+        width: percentValue($slide-width);
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    @for $i from 1 through $slide-count {
+        $bg: nth($slide-info, $i);
+        .slide-#{$i} {
+            @include slide-props($i - 1, $bg);
+        }
+    }
+}
